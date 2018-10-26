@@ -42,7 +42,6 @@ Search.prototype.countrySearch = function (countryName) {
     for(i=0; i< data.length; i++){
       if(data[i].name.toLowerCase() === searchName){
         PubSub.publish('Country:dataReady', data[i]);
-        return
       }
       else{
         count -- ;
@@ -63,9 +62,12 @@ Search.prototype.continentSearch = function (continentName) {
 
     let count = data.length;
 
+    let continent = [];
+
     for(i=0; i< data.length; i++){
       if(data[i].region.toLowerCase() === searchName){
         // console.log(data[i]);
+        continent.push(data[i]);
       }
       else{
         count -- ;
@@ -73,7 +75,12 @@ Search.prototype.continentSearch = function (continentName) {
     }
 
     if(count === 0){
-      // console.log("Continent not found");
+      console.log("Continent not found");
+    }
+
+
+    if( continent.length > 0){
+      PubSub.publish('Continent:dataReady', continent);
     }
   });
 };

@@ -15,6 +15,12 @@
     font-size: 17px;
 }
 
+#continentView {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
 @media screen and (max-width: 600px) {
     .search-nav a, .topnav input[type=text] {
