@@ -37,18 +37,19 @@ Search.prototype.countrySearch = function (countryName) {
     const data = evt.detail;
     const searchName = this.inputFormat(countryName);
 
-    let count = 0;
+    let count = data.length;
 
     for(i=0; i< data.length; i++){
       if(data[i].name.toLowerCase() === searchName){
-        console.log(data[i]);
+        PubSub.publish('Country:dataReady', data[i]);
+        return
       }
       else{
-        count ++ ;
+        count -- ;
       }
     }
 
-    if(count > 0){
+    if(count === 0){
       console.log("country not found");
     }
 
@@ -60,23 +61,20 @@ Search.prototype.continentSearch = function (continentName) {
     const data = evt.detail;
     const searchName = this.inputFormat(continentName);
 
-    let count = 0;
+    let count = data.length;
 
     for(i=0; i< data.length; i++){
       if(data[i].region.toLowerCase() === searchName){
-        console.log(data[i]);
+        // console.log(data[i]);
       }
       else{
-        count ++ ;
+        count -- ;
       }
     }
 
-    if(count > 0){
-      console.log("Continent not found");
+    if(count === 0){
+      // console.log("Continent not found");
     }
-
-
-
   });
 };
 
