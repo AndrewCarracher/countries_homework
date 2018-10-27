@@ -11,8 +11,6 @@ CountryView.prototype.bindEvents = function () {
   });
   PubSub.subscribe('CountryFromContinent:dataReady', (evt) => {
     const country = evt.detail;
-    console.log(country);
-    console.dir(country);
     this.render(country);
   });
 };
@@ -22,9 +20,10 @@ CountryView.prototype.render = function (data) {
 
   const countryElement = document.createElement('div');
   countryElement.id = "countryView";
+  countryElement.style.backgroundImage = `url( ${data.flag})`;
   this.container.appendChild(countryElement);
 
-  const nameElement = document.createElement('h2');
+  const nameElement = document.createElement('h1');
   nameElement.textContent = data.name;
   countryElement.appendChild(nameElement);
 

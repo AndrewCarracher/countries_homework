@@ -1,10 +1,32 @@
-h1{text-align: center;}
+body{
+  background-image: url(../images/earth-lights-world-41949.jpg) ;
+  height: 100%;
+  width: auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  color: #ffffff;
+}
+
+h1{text-align: center;
+font-weight: bold;
+font-size: 40px;
+padding-top: 100px;
+color: #ffffff;}
 
 
 /* Add a background color to the top navigation bar */
 .search-nav {
-  background-color: #3b6b72;
-  overflow: hidden;
+  background-color: #2302a6;
+  background-image: linear-gradient(to bottom,#2302a6 0,#110151 100%);
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 60px;
+  padding: 0;
+  margin: 0;
+  z-index: 4;
 }
 
 /* Style the search box inside the navigation bar */
@@ -12,7 +34,7 @@ h1{text-align: center;}
     float: right;
     padding: 6px;
     border: none;
-    margin-top: 8px;
+    margin-top: 15px;
     margin-right: 16px;
     margin-bottom: 8px;
     font-size: 17px;
@@ -27,8 +49,34 @@ h1{text-align: center;}
   grid-gap: 70px;
 }
 
+#countryView{
+  margin-top: 150px;
+  margin-left: 150px;
+  margin-right: 150px;
+  text-align: center;
+  padding: 15px;
+  height: 400px;
+  width: auto;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#countryView h1{
+  padding-top: 120px;
+  padding-bottom: 10px;
+}
+
+.continentCountryName {
+  padding: 15px;
+  font-weight: bold;
+}
+
 .country{
   padding: 15px;
+  height: 100%;
+  width: auto;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */

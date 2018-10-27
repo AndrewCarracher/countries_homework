@@ -28,11 +28,17 @@ ContinentView.prototype.render = function (data) {
   for(i=0; i < data.length; i++){
     // create wrapper, set bg to flag and display name
     const country = document.createElement('div');
+    console.dir(country);
     country.class = "country";
-    country.textContent = data[i].name;
-    country.id = data[i].name;
+    country.className = "country";
     country.style.backgroundImage = `url( ${data[i].flag})`;
     continentElement.appendChild(country);
+    country.id = data[i].name;
+
+    const countryName = document.createElement('div');
+    countryName.textContent = data[i].name;
+    countryName.className = "continentCountryName";
+    country.appendChild(countryName);
 
     const fullCountryData = data[i];
 
