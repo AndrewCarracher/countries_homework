@@ -49,7 +49,7 @@ Search.prototype.countrySearch = function (countryName) {
     }
 
     if(count === 0){
-      const countrySearch = "country not found";
+      const countrySearch = "Unfortunatly we cannot find this Country. Please try again or search by Continent";
       PubSub.publish('NotFoundCountry:dataReady', countrySearch);
     }
 
@@ -76,7 +76,7 @@ Search.prototype.continentSearch = function (continentName) {
     }
 
     if(count === 0){
-      const continentSearch = "continent not found";
+      const continentSearch = "Unfortunatly we cannot find this Continent. Please try again";
       PubSub.publish('NotFoundContinent:dataReady', continentSearch);
     }
 
