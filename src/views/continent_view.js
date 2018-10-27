@@ -18,7 +18,6 @@ ContinentView.prototype.render = function (data) {
   const continentNameElement = document.createElement('h1');
   continentNameElement.id = "continentName";
   continentNameElement.textContent = data[0].region;
-  console.log(data);
   this.container.appendChild(continentNameElement);
 
 
@@ -31,8 +30,15 @@ ContinentView.prototype.render = function (data) {
     const country = document.createElement('div');
     country.class = "country";
     country.textContent = data[i].name;
+    country.id = data[i].name;
     country.style.backgroundImage = `url( ${data[i].flag})`;
     continentElement.appendChild(country);
+
+    const fullCountryData = data[i];
+
+    country.addEventListener("click", function(event) {
+      PubSub.publish('CountryFromContinent:dataReady', fullCountryData);
+    })
   }
 };
 

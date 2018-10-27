@@ -9,6 +9,12 @@ CountryView.prototype.bindEvents = function () {
     const country = evt.detail;
     this.render(country);
   });
+  PubSub.subscribe('CountryFromContinent:dataReady', (evt) => {
+    const country = evt.detail;
+    console.log(country);
+    console.dir(country);
+    this.render(country);
+  });
 };
 
 CountryView.prototype.render = function (data) {
