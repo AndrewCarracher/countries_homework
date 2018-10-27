@@ -31,7 +31,7 @@ ContinentView.prototype.render = function (data) {
     const country = document.createElement('div');
     country.class = "country";
     country.textContent = data[i].name;
-    country.style.backgroundImage = data[i].flag;
+    country.style.backgroundImage = `url( ${data[i].flag})`;
     continentElement.appendChild(country);
   }
 };
